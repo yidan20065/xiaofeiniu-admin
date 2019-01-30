@@ -1,5 +1,13 @@
 <template>
-    <div class="notfound">
-        <h2>notfound</h2>
+    <div class="xfn-notfound">
+        <h1>404! NOT FOUND！</h1>
     </div>
 </template>
+
+<style lang="scss" scoped>
+    .xfn-notfound{
+        text-align: center;
+        padding-top: 200px;
+    }
+</style>
+
