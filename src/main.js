@@ -39,6 +39,12 @@ Vue.filter('currency',(val)=>{
   //把int转为￥xx.yy
   return '￥'+val.toFixed(2)
 })
+Vue.filter('tableStatus',(val)=>{
+  if(val==1) return '空闲';
+  else if(val==2) return '预定';
+  else if(val==3) return '占用';
+  else return '其它';
+})
 //把axios设置为所有Vue组件实例的成员属性,以后可以使用this.$axios使用异步请求功能
 Vue.prototype.$axios=axios
 //注册ElementUI插件
@@ -46,6 +52,6 @@ Vue.use(ElementUI)
 
 new Vue({
   router,
-  store,
+  store,                  //指定当前项目唯一的Vuex存储创建对象，其中保存着可供所有组件共享的数据
   render: h => h(App)
 }).$mount('#app')
